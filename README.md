@@ -1,6 +1,6 @@
 # 📌 Medical Diagnosis of Diabetes Using Machine Learning
 
-This project implements a **machine learning-based system** to classify and diagnose diabetes based on patient symptoms. Using **Python (scikit-learn)** and **Weka**, multiple classification algorithms were trained and evaluated to determine the most effective model for diabetes prediction.
+This project implements a **machine learning-based system** to classify and diagnose diabetes based on patient symptoms. Using **Python** and **Weka**, multiple classification algorithms were trained and evaluated to determine the most effective model for diabetes prediction.
 
 ## 🚀 Features  
 - Utilizes **Decision Trees, Random Forest, Naïve Bayes, and Neural Networks**
