@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Diagnosis of Diabetes Using Machine Learning</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-image: url('static/image1.jpg'); 
+            background-size: cover; 
+            background-position: center center; 
+            background-attachment: fixed; 
+            height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9); 
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            width: 400px;
+            max-width: 90vw;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #222;
+            font-size: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        select, input {
+            width: calc(100% - 22px);
+            padding: 12px 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            color: #222;
+        }
+
+        select:focus, input:focus {
+            outline: none;
+            border-color: #a3e88c; 
+            box-shadow: 0 0 8px rgba(13, 84, 142, 0.3);
+        }
+
+        button {
+            background-color: #1c58eff7; 
+            color: #fff;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #4966eb; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Medical Diagnosis of Diabetes Using Machine Learning</h1>
+        <form action="/page2" method="POST">
+            <div class="form-group">
+                <label for="dataset">Choose a Dataset:</label>
+                <select id="dataset" name="dataset" required>
+                    <option value="1">Dataset 1</option>
+                    <option value="2">Dataset 2</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="algorithm">Choose an Algorithm:</label>
+                <select id="algorithm" name="algorithm" required>
+                    <option value="DecisionTree">Decision Tree</option>
+                    <option value="NaiveBayes">Naive Bayes</option>
+                    <option value="NeuralNetwork">Neural Network</option>
+                    <option value="RandomForest">Random Forest</option>
+                </select>
+            </div>
+
+            <button type="submit">Next</button>
+        </form>
+    </div>
+</body>
+</html>

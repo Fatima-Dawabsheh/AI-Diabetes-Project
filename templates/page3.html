@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Feature Values</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('static/image3.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9); 
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(11, 11, 11, 0.882);
+            width: 100%;
+            max-width: 500px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        form div {
+            margin-bottom: 5px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        select, input {
+            width: calc(100% - 20px);
+            padding: 5px;
+            border: 1px solid #110e0e;
+            border-radius: 5px;
+        }
+        button {
+            background: #191a1b;
+            color: #fff;
+            padding: 10px 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #97c9dd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Diabetes Test Data Input</h1>
+        <form action="/predict" method="POST">
+            <input type="hidden" name="dataset" value="{{ dataset }}">
+            <input type="hidden" name="algorithm" value="{{ algorithm }}">
+            {% for feature in features %}
+                <div>
+                    <label for="{{ feature }}">{{ feature }}</label>
+                    {% if feature == "Gender" %}
+                        <select id="{{ feature }}" name="{{ feature }}" required>
+                            <option value="1">Male</option>
+                            <option value="2">Female</option>
+                        </select>
+                    {% elif feature == "smoking" %}
+                        <select id="{{ feature }}" name="{{ feature }}" required>
+                            <option value="3">No</option>
+                            <option value="2">Yes</option>
+                            <option value="1">Sometime</option>
+                        </select>
+                    {% elif feature == "drinking" %}
+                        <select id="{{ feature }}" name="{{ feature }}" required>
+                            <option value="3">No</option>
+                            <option value="2">Yes</option>
+                            <option value="1">Sometime</option>
+                        </select>
+                    {% elif feature == "family_histroy" %}
+                        <select id="{{ feature }}" name="{{ feature }}" required>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                    {% else %}
+                        <input type="text" id="{{ feature }}" name="{{ feature }}" required>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

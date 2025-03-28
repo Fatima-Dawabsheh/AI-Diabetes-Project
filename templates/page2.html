@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confusion Matrix and Metrics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('static/image2.jpg') no-repeat center center fixed; 
+            background-size: cover;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9); 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: fit-content;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .metrics-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .metric {
+            background-color: #a3e88c; 
+            color: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            text-align: center;
+        }
+        .navigation-box button {
+            background-color: #ffe600; 
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .navigation-box button:hover {
+            background-color: #f0ec20ee;
+        }
+
+        .metric:hover {
+            background-color: #92d17d; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Confusion Matrix</h1>
+        <table>
+            <tr>
+                <th></th>
+                <th>Actual Positive</th>
+                <th>Actual Negative</th>
+            </tr>
+            <tr>
+                <th>Classified Positive</th>
+                <td>{{ conf_matrix[1][1] }}</td>
+                <td>{{ conf_matrix[1][0] }}</td>
+            </tr>
+            <tr>
+                <th>Classified Negative</th>
+                <td>{{ conf_matrix[0][1] }}</td>
+                <td>{{ conf_matrix[0][0] }}</td>
+            </tr>
+        </table>
+
+        <div class="metrics-container">
+            <div class="metric">Time Elapsed: {{ time_elapsed }}s</div>
+            <div class="metric">Accuracy: {{ accuracy }}</div>
+            <div class="metric">Precision: {{ precision }}</div>
+            <div class="metric">Recall: {{ recall }}</div>
+            <div class="metric">F1-Score: {{ f1 }}</div>
+        </div>
+
+        <div class="navigation-box">
+            <h1>Do you want to do a test ?</h1>
+            <form action="/page3" method="POST">
+                <input type="hidden" name="dataset" value="{{ dataset }}">
+                <input type="hidden" name="algorithm" value="{{ algorithm }}">
+                <div class="nav-buttons">
+                    <button type="submit">Yes</button>
+                    <button type="button" onclick="window.location.href='/'">No</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
