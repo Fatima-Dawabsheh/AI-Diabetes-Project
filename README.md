@@ -17,9 +17,9 @@ This project implements a **machine learning-based system** to classify and diag
 - [Kaggle Dataset 2](https://www.kaggle.com/datasets/pkdarabi/diabetes-dataset-with-18-features)  
 
 ## 👥 Contributors  
-👥 **Fatima Dawabsheh** (1210827)  
-👥 **Shahed Shrateh** (1210444)  
-👥 **Raghed Isleem** (1211326)  
+👥 **Fatima Dawabsheh**   
+👥 **Shahed Shrateh**  
+👥 **Raghed Isleem**  
 
 ## 🔗 References  
 🔗 Kaggle datasets
